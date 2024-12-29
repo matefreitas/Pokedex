@@ -57,6 +57,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
 
     ksp(libs.hilt.android.compiler)
     ksp(libs.hilt.navigation.compose.compiler)
