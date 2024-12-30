@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.paging.compose)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
+    implementation(libs.gson)
 
     ksp(libs.hilt.android.compiler)
     ksp(libs.hilt.navigation.compose.compiler)
