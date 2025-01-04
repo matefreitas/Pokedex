@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "br.com.mateus.pokedex"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "br.com.mateus.pokedex"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -38,6 +38,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -55,6 +56,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.coil)
     implementation(libs.retrofit)
+    implementation(libs.retrofit.converter)
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)
     implementation(libs.okhttp)
