@@ -1,7 +1,7 @@
 package br.com.mateus.pokedex.di
 
 import br.com.mateus.pokedex.BuildConfig
-import br.com.mateus.pokedex.service.PokemonService
+import br.com.mateus.pokedex.service.PokedexService
 import br.com.mateus.pokedex.util.urlBaseApi
 import dagger.Module
 import dagger.Provides
@@ -49,7 +49,7 @@ object NetworkModule {
     fun provideMovieService(
         client: OkHttpClient,
         converterFactory: GsonConverterFactory
-    ): PokemonService{
+    ): PokedexService{
         return Retrofit.Builder()
             .baseUrl(urlBaseApi)
             .client(client)
