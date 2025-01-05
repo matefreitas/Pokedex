@@ -12,7 +12,4 @@ fun ListPokemon(
     uiState: PokemonState
 ) {
     val pokemons = uiState.pokemons.collectAsLazyPagingItems()
-    for ( pokemon in pokemons.itemSnapshotList){
-        Log.d("item", "ListPokemon: ${pokemon?.name}")
-    }
 }

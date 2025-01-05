@@ -1,5 +1,6 @@
 package br.com.mateus.pokedex.source
 
+import br.com.mateus.pokedex.core.remote.model.PokemonDetailResponse
 import br.com.mateus.pokedex.core.remote.model.PokemonResponse
 import br.com.mateus.pokedex.paging.PokedexPagingSource
 import br.com.mateus.pokedex.service.PokedexService
@@ -14,5 +15,9 @@ class PokedexRemoteDataSourceImpl @Inject constructor(
 
     override suspend fun getListPokemons(offset: Int, limit: Int): PokemonResponse {
         return service.getPokemons(offset = offset, limit = limit)
+    }
+
+    override suspend fun getPokemon(name: String): PokemonDetailResponse {
+        return service.getPokemon(name = name)
     }
 }

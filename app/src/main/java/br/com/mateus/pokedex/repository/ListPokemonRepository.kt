@@ -2,6 +2,7 @@ package br.com.mateus.pokedex.repository
 
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import br.com.mateus.pokedex.core.remote.model.PokemonDetailResponse
 import br.com.mateus.pokedex.core.remote.model.ResultsPokemon
 import kotlinx.coroutines.flow.Flow
 

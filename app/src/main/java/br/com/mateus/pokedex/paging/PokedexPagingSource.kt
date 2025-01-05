@@ -1,5 +1,6 @@
 package br.com.mateus.pokedex.paging
 
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import br.com.mateus.pokedex.core.remote.model.ResultsPokemon
@@ -21,6 +22,11 @@ class PokedexPagingSource(
 
             val response = pokemonRemoteDataSource.getListPokemons(offset = offsetNumber, 20)
             val listPokemon = response.resultsPokemons
+
+            listPokemon.forEach {
+                val pokemonDetail = pokemonRemoteDataSource.getPokemon(it.name)
+                Log.d("nomePokemon", "load: ${pokemonDetail.sprites.frontDefault}")
+            }
 
             LoadResult.Page(
                 data = listPokemon,
