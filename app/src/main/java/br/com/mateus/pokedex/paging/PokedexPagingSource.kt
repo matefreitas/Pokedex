@@ -2,7 +2,7 @@ package br.com.mateus.pokedex.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import br.com.mateus.pokedex.model.ResultsPokemon
+import br.com.mateus.pokedex.core.remote.model.ResultsPokemon
 import br.com.mateus.pokedex.source.PokedexRemoteDataSource
 
 class PokedexPagingSource(

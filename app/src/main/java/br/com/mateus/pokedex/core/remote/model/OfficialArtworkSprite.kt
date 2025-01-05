@@ -1,4 +1,4 @@
-package br.com.mateus.pokedex.model
+package br.com.mateus.pokedex.core.remote.model
 
 import com.google.gson.annotations.SerializedName
 

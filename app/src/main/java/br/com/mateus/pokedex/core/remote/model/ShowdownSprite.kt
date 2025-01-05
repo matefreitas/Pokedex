@@ -1,8 +1,8 @@
-package br.com.mateus.pokedex.model
+package br.com.mateus.pokedex.core.remote.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Sprite(
+data class ShowdownSprite(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
@@ -18,7 +18,5 @@ data class Sprite(
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: String?,
-    @SerializedName("other")
-    val other: Other
+    val frontShinyFemale: String?
 )
