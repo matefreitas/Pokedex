@@ -17,15 +17,15 @@ class PokedexPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ResultsPokemon> {
         return try {
-            val offsetNumber = params.key ?: 1
+            val offsetNumber = params.key ?: 0
 
             val response = pokemonRemoteDataSource.getListPokemons(offset = offsetNumber, 20)
             val listPokemon = response.resultsPokemons
 
             LoadResult.Page(
                 data = listPokemon,
-                prevKey = if (offsetNumber == 1) null else offsetNumber - 1,
-                nextKey = if (listPokemon.isEmpty()) null else offsetNumber + 1
+                prevKey = if (offsetNumber == 0) null else offsetNumber - 20,
+                nextKey = if (listPokemon.isEmpty()) null else offsetNumber + 20
             )
         }catch (exception: Exception){
             return  LoadResult.Error(exception)

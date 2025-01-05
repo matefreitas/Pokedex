@@ -5,9 +5,10 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import br.com.mateus.pokedex.model.ResultsPokemon
 import br.com.mateus.pokedex.source.PokedexRemoteDataSource
+import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
-class ListPokemonRepositoryImpl constructor(
+class ListPokemonRepositoryImpl @Inject constructor(
     private val remoteDataSource: PokedexRemoteDataSource
 ): ListPokemonRepository {
     override fun getListPokemon(pagingConfig: PagingConfig): Flow<PagingData<ResultsPokemon>> {
