@@ -1,4 +1,4 @@
-package br.com.mateus.pokedex.core.remote.model
+package br.com.mateus.pokedex.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -22,13 +22,13 @@ data class PokemonDetailResponse(
     val name: String,
     val order: Long,
     @SerializedName("past_abilities")
-    val pastAbilities: List<Any?>,
+    val pastAbilities: List<Ability?>,
     @SerializedName("past_types")
-    val pastTypes: List<Any?>,
+    val pastTypes: List<Types?>,
     val species: Species,
     val sprites: Sprites,
     val stats: List<Stat>,
-    val types: List<Type>,
+    val types: List<Types>,
     val weight: Long,
 )
 
@@ -125,19 +125,19 @@ data class Sprites(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
     val other: Other,
     val versions: Versions,
 )
@@ -155,18 +155,18 @@ data class DreamWorld(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
 )
 
 data class Home(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class OfficialArtwork(
@@ -180,19 +180,19 @@ data class Showdown(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class Versions(
@@ -350,57 +350,57 @@ data class DiamondPearl(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class HeartgoldSoulsilver(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class Platinum(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class GenerationV(
@@ -413,38 +413,38 @@ data class BlackWhite(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class Animated(
     @SerializedName("back_default")
     val backDefault: String,
     @SerializedName("back_female")
-    val backFemale: Any?,
+    val backFemale: String?,
     @SerializedName("back_shiny")
     val backShiny: String,
     @SerializedName("back_shiny_female")
-    val backShinyFemale: Any?,
+    val backShinyFemale: String?,
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class GenerationVi(
@@ -458,22 +458,22 @@ data class OmegarubyAlphasapphire(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class XY(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class GenerationVii(
@@ -486,18 +486,18 @@ data class Icons(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
 )
 
 data class UltraSunUltraMoon(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
     @SerializedName("front_shiny")
     val frontShiny: String,
     @SerializedName("front_shiny_female")
-    val frontShinyFemale: Any?,
+    val frontShinyFemale: String?,
 )
 
 data class GenerationViii(
@@ -508,7 +508,7 @@ data class Icons2(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")
-    val frontFemale: Any?,
+    val frontFemale: String?,
 )
 
 data class Stat(
@@ -523,12 +523,12 @@ data class Stat2(
     val url: String,
 )
 
-data class Type(
+data class Types(
     val slot: Long,
-    val type: Type2,
+    val type: Type,
 )
 
-data class Type2(
+data class Type(
     val name: String,
     val url: String,
 )

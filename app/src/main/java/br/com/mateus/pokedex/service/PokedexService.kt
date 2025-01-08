@@ -1,7 +1,7 @@
 package br.com.mateus.pokedex.service
 
-import br.com.mateus.pokedex.core.remote.model.PokemonDetailResponse
-import br.com.mateus.pokedex.core.remote.model.PokemonResponse
+import br.com.mateus.pokedex.model.PokemonDetailResponse
+import br.com.mateus.pokedex.model.PokemonResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
