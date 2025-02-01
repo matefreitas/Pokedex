@@ -5,8 +5,8 @@ import br.com.mateus.pokedex.repository.ListPokemonRepositoryImpl
 import br.com.mateus.pokedex.service.PokedexService
 import br.com.mateus.pokedex.source.PokedexRemoteDataSource
 import br.com.mateus.pokedex.source.PokedexRemoteDataSourceImpl
-import br.com.mateus.pokedex.ui.pokemon.useCase.GetPokemonsUseCase
-import br.com.mateus.pokedex.ui.pokemon.useCase.GetPokemonsUseCaseImpl
+import br.com.mateus.pokedex.ui.listPokemon.GetPokemonsUseCase
+import br.com.mateus.pokedex.ui.listPokemon.GetPokemonsUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,7 +31,7 @@ object ListPokemonModule {
 
     @Provides
     @Singleton
-    fun provideGetPokemonsUseCase(listPokemonRepository: ListPokemonRepository): GetPokemonsUseCase{
+    fun provideGetPokemonsUseCase(listPokemonRepository: ListPokemonRepository): GetPokemonsUseCase {
         return GetPokemonsUseCaseImpl(repository = listPokemonRepository)
     }
 }
