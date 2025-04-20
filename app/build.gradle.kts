@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.coil)
+    implementation(libs.coil.network)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter)
     implementation(libs.paging.runtime)
