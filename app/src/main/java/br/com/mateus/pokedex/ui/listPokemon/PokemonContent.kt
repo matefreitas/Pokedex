@@ -33,7 +33,8 @@ fun PokemonContent(
                     PokemonItem(
                         name = pokemon.nome,
                         imgPokemon = pokemon.imgUrl,
-                        id = pokemon.id
+                        type = pokemon.type,
+
                     )
                 }
             }
