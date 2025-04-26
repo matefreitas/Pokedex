@@ -8,14 +8,18 @@ import androidx.paging.compose.collectAsLazyPagingItems
 @Composable
 fun ListPokemonScreen(
     modifier: Modifier = Modifier,
-    uiState: PokemonState
+    uiState: PokemonState,
+    navDetailPokemon: (Long) -> Unit
 ) {
     val pokemons = uiState.pokemons.collectAsLazyPagingItems()
     Scaffold(
         content = {paddingValues ->
             PokemonContent(
                 pagingPokemons = pokemons,
-                paddingValues = paddingValues
+                paddingValues = paddingValues,
+                navDetailPokemon = {pokemonId ->
+                    navDetailPokemon(pokemonId)
+                }
             )
         }
     )

@@ -17,7 +17,8 @@ import br.com.mateus.pokedex.model.Pokemon
 fun PokemonContent(
     modifier: Modifier = Modifier,
     pagingPokemons: LazyPagingItems<Pokemon>,
-    paddingValues: PaddingValues
+    paddingValues: PaddingValues,
+    navDetailPokemon: (pokemonId: Long) -> Unit
 ) {
     Box{
         LazyVerticalGrid(
@@ -34,7 +35,10 @@ fun PokemonContent(
                         name = pokemon.nome,
                         imgPokemon = pokemon.imgUrl,
                         type = pokemon.type,
-
+                        id = pokemon.id,
+                        onclick = {pokemonId ->
+                            navDetailPokemon(pokemonId)
+                        }
                     )
                 }
             }

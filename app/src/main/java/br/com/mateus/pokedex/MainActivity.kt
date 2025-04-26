@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
-import br.com.mateus.pokedex.ui.listPokemon.ListPokemonScreen
-import br.com.mateus.pokedex.ui.listPokemon.ListPokemonViewModel
+import androidx.navigation.compose.rememberNavController
+import br.com.mateus.pokedex.navigation.NavGraph
 import br.com.mateus.pokedex.ui.theme.PokedexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,11 +16,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PokedexTheme {
-                val uiState: ListPokemonViewModel = hiltViewModel()
-                ListPokemonScreen(
-                    Modifier,
-                    uiState.uiState
-                )
+                NavGraph(navHostController = rememberNavController())
             }
         }
     }
