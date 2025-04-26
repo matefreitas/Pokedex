@@ -25,7 +25,6 @@ fun NavGraph(
         composable(Screen.Home.route){
             val uiState: ListPokemonViewModel = hiltViewModel()
             ListPokemonScreen(
-                modifier = Modifier,
                 uiState = uiState.uiState,
                 navDetailPokemon = {
                     navHostController.navigate(Screen.Detail.passPokemonId(id = it))
