@@ -9,7 +9,6 @@ import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-
 @HiltViewModel
 class ListPokemonViewModel @Inject constructor(
     getPokemonsUseCase: GetPokemonsUseCase

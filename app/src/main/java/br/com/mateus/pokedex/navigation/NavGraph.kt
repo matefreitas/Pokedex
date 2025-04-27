@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import br.com.mateus.pokedex.ui.detailPokemon.DetailPokemonScreen
+import br.com.mateus.pokedex.ui.detailPokemon.DetailPokemonViewModel
 import br.com.mateus.pokedex.ui.listPokemon.ListPokemonScreen
 import br.com.mateus.pokedex.ui.listPokemon.ListPokemonViewModel
 import br.com.mateus.pokedex.util.DETAIL_POKEMON_ARGUMENT_KEY
@@ -34,12 +35,15 @@ fun NavGraph(
             route = Screens.Detail.route,
             arguments = listOf(
                 navArgument(DETAIL_POKEMON_ARGUMENT_KEY) {
-                    type = NavType.IntType
+                    type = NavType.LongType
                     defaultValue = 0
                 }
             )
         ) {
-            DetailPokemonScreen()
+            val uiState: DetailPokemonViewModel = hiltViewModel()
+            DetailPokemonScreen(
+                uiState = uiState.uiState
+            )
         }
     }
 }

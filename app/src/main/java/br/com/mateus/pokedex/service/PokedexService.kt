@@ -18,4 +18,9 @@ interface PokedexService {
     suspend fun getPokemon(
         @Path("name_pokemon") name: String
     ): PokemonDetailResponse
+
+    @GET("pokemon/{id_pokemon}/")
+    suspend fun getPokemonDetails(
+        @Path("id_pokemon") id: Long
+    ): PokemonDetailResponse
 }
