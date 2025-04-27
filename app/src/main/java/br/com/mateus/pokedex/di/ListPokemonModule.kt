@@ -3,8 +3,8 @@ package br.com.mateus.pokedex.di
 import br.com.mateus.pokedex.repository.ListPokemonRepository
 import br.com.mateus.pokedex.repository.ListPokemonRepositoryImpl
 import br.com.mateus.pokedex.service.PokedexService
-import br.com.mateus.pokedex.source.PokedexRemoteDataSource
-import br.com.mateus.pokedex.source.PokedexRemoteDataSourceImpl
+import br.com.mateus.pokedex.source.ListPokemonRemoteDataSource
+import br.com.mateus.pokedex.source.ListPokemonRemoteDataSourceImpl
 import br.com.mateus.pokedex.ui.listPokemon.GetPokemonsUseCase
 import br.com.mateus.pokedex.ui.listPokemon.GetPokemonsUseCaseImpl
 import dagger.Module
@@ -19,13 +19,13 @@ object ListPokemonModule {
 
     @Provides
     @Singleton
-    fun providePokedexDataSource(service: PokedexService): PokedexRemoteDataSource{
-        return PokedexRemoteDataSourceImpl(service = service)
+    fun providePokedexDataSource(service: PokedexService): ListPokemonRemoteDataSource{
+        return ListPokemonRemoteDataSourceImpl(service = service)
     }
 
     @Provides
     @Singleton
-    fun provideListPokemonRepository(remoteDataSource: PokedexRemoteDataSource): ListPokemonRepository{
+    fun provideListPokemonRepository(remoteDataSource: ListPokemonRemoteDataSource): ListPokemonRepository{
         return ListPokemonRepositoryImpl(remoteDataSource = remoteDataSource)
     }
 

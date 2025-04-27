@@ -19,19 +19,19 @@ fun NavGraph(
 ) {
     NavHost(
         navController = navHostController,
-        startDestination = Screen.Home.route
+        startDestination = Screens.Home.route
     ){
-        composable(Screen.Home.route){
+        composable(Screens.Home.route){
             val uiState: ListPokemonViewModel = hiltViewModel()
             ListPokemonScreen(
                 uiState = uiState.uiState,
                 navDetailPokemon = {
-                    navHostController.navigate(Screen.Detail.passPokemonId(id = it))
+                    navHostController.navigate(Screens.Detail.passPokemonId(id = it))
                 }
             )
         }
         composable(
-            route = Screen.Detail.route,
+            route = Screens.Detail.route,
             arguments = listOf(
                 navArgument(DETAIL_POKEMON_ARGUMENT_KEY) {
                     type = NavType.IntType

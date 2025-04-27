@@ -1,14 +1,12 @@
 package br.com.mateus.pokedex.paging
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import br.com.mateus.pokedex.model.Pokemon
-import br.com.mateus.pokedex.model.ResultsPokemon
-import br.com.mateus.pokedex.source.PokedexRemoteDataSource
+import br.com.mateus.pokedex.source.ListPokemonRemoteDataSource
 
-class PokedexPagingSource(
-    private val pokemonRemoteDataSource: PokedexRemoteDataSource
+class ListPokemonPagingSource(
+    private val pokemonRemoteDataSource: ListPokemonRemoteDataSource
 ): PagingSource<Int, Pokemon>() {
     override fun getRefreshKey(state: PagingState<Int, Pokemon>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
