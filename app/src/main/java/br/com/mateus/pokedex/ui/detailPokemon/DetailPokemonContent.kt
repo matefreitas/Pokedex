@@ -1,8 +1,7 @@
-package br.com.mateus.pokedex.ui.listPokemon
+package br.com.mateus.pokedex.ui.detailPokemon
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,12 +16,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.mateus.pokedex.R
+import br.com.mateus.pokedex.model.PokemonDetail
 import br.com.mateus.pokedex.ui.theme.PokedexTheme
 import br.com.mateus.pokedex.util.FunctionUtil
 import coil3.compose.AsyncImage
@@ -31,68 +30,55 @@ import coil3.request.crossfade
 import coil3.request.error
 
 @Composable
-fun PokemonItem(
+fun DetailPokemonContent(
     modifier: Modifier = Modifier,
-    name: String,
-    imgPokemon: String,
+    paddingValues: PaddingValues,
     type: String,
-    id: Long,
-    onclick: (pokemonId: Long) -> Unit
+    urlImg: String,
+    name: String
 ) {
-    Card(
-        modifier = modifier
-            .fillMaxSize()
-            .height(200.dp)
-            .padding(8.dp)
-            .clickable{ onclick(id) },
-        shape = RoundedCornerShape(8.dp),
-        elevation = CardDefaults.elevatedCardElevation(8.dp)
+    Column(
+        modifier = modifier.padding(paddingValues)
     ) {
-        Column(
-            modifier = modifier.background(FunctionUtil.backgroundColorTypePokemon(type))
+        Card(
+            shape = RoundedCornerShape(bottomStart = 10.dp, bottomEnd = 10.dp),
+            colors = CardDefaults.cardColors(
+                contentColor = FunctionUtil.backgroundColorTypePokemon(type),
+                containerColor = FunctionUtil.backgroundColorTypePokemon(type)
+            )
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(imgPokemon)
+                    .data(urlImg)
                     .crossfade(true)
                     .error(R.drawable.ic_launcher_foreground)
                     .build(),
-                contentDescription = "",
+                contentDescription = null,
                 modifier = modifier
                     .fillMaxWidth()
-                    .height(150.dp)
+                    .height(200.dp)
                     .clip(RoundedCornerShape(8.dp))
-
-            )
-            Text(
-                text = name,
-                textAlign = TextAlign.Center,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.ExtraBold,
-                color = Color.White,
-                modifier = modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 10.dp)
             )
         }
+        Text(
+            name,
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center,
+            modifier = modifier.fillMaxWidth()
+        )
     }
+
 }
 
-
-
-@Preview
+/*@Preview
 @Preview(uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun PokemonItemPreview() {
+private fun DetailPokemonContentPreview() {
     PokedexTheme {
         Surface {
-            PokemonItem(
-                name = "pikachu",
-                imgPokemon = "",
-                type = "psychic",
-                id = 0,
-                onclick = {}
+            DetailPokemonContent(
+
             )
         }
     }
-}
+}*/

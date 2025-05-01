@@ -28,7 +28,7 @@ class DetailPokemonViewModel @Inject constructor(
                 val resultData = getPokemonDetailsUseCase.invoke(
                     params = GetPokemonDetailsUseCase.Params(pokemonId = id)
                 )
-                Log.d("result", "Resultado consulta: $resultData")
+                uiState = uiState.copy(resultData)
             }
         }
     }

@@ -42,8 +42,10 @@ fun NavGraph(
         ) {
             val uiState: DetailPokemonViewModel = hiltViewModel()
             DetailPokemonScreen(
-                uiState = uiState.uiState
+                uiState = uiState.uiState,
+                navigateBack = {navHostController.navigateUp()}
             )
+
         }
     }
 }
