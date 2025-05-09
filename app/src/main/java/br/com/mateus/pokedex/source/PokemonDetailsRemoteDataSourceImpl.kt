@@ -6,33 +6,19 @@ import javax.inject.Inject
 
 class PokemonDetailsRemoteDataSourceImpl @Inject constructor(
     private val service: PokedexService
-): PokemonDetailsRemoteDataSource {
+) : PokemonDetailsRemoteDataSource {
 
     override suspend fun getDetailPokemon(pokemonId: Long): PokemonDetail {
         val response = service.getPokemonDetails(pokemonId)
+        val listTypes: MutableList<String> = mutableListOf()
+        response.types.forEach {
+            listTypes.add(it.type.name)
+        }
+
         return PokemonDetail(
-            id = response.id,
+            spritePokemon = response.sprites.frontDefault,
             name = response.name,
-            forms = response.forms,
-            cries = response.cries,
-            moves = response.moves,
-            order = response.order,
-            stats = response.stats,
-            types = response.types,
-            height = response.height,
-            weight = response.weight,
-            species = response.species,
-            sprites = response.sprites,
-            abilities = response.abilities,
-            heldItems = response.heldItems,
-            isDefault = response.isDefault,
-            pastTypes = response.pastTypes,
-            gameIndices = response.gameIndices,
-            pastAbilities = response.pastAbilities,
-            baseExperience = response.baseExperience,
-            locationAreaEncounters = response.locationAreaEncounters
+            types = listTypes
         )
     }
-
-
 }

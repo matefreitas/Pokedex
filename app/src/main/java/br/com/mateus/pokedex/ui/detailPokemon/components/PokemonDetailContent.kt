@@ -4,13 +4,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.mateus.pokedex.data.model.PokemonDetail
+import br.com.mateus.pokedex.ui.theme.PokedexTheme
 
 @Composable
 fun DetailPokemonContent(
@@ -22,8 +25,8 @@ fun DetailPokemonContent(
         modifier = modifier.padding(paddingValues)
     ) {
         PokemonDetailBackdropImage(
-            urlImg = pokemon.sprites.frontDefault,
-            type = pokemon.types[0].type.name
+            urlImg = pokemon.spritePokemon,
+            type = pokemon.types[0]
         )
         Text(
             pokemon.name,
@@ -37,7 +40,7 @@ fun DetailPokemonContent(
 
 }
 
-/*@Preview
+@Preview
 @Preview(uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun DetailPokemonContentPreview() {
@@ -46,43 +49,11 @@ private fun DetailPokemonContentPreview() {
             DetailPokemonContent(
                 paddingValues = PaddingValues(),
                 pokemon = PokemonDetail(
-                    abilities = listOf(),
-                    baseExperience = 0,
-                    cries = Cries("",""),
-                    forms = listOf(),
-                    gameIndices = listOf(),
-                    height = 0,
-                    heldItems = listOf(),
-                    id = 0,
-                    isDefault = false,
-                    locationAreaEncounters = "",
-                    moves = listOf(),
-                    name = "",
-                    order = 0,
-                    pastAbilities = listOf(),
-                    pastTypes = listOf(),
-                    species = Species("",""),
-                    sprites = Sprites(
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        Other(
-                            DreamWorld("",""),
-                            Home("","","",""),
-                            OfficialArtwork("",""),
-                            Showdown("","","","","","","","")
-                        ),
-                    ),
-                    stats = listOf(),
-                    types = listOf(),
-                    weight = 0
+                    spritePokemon = "",
+                    "pikachu",
+                    listOf("Rock")
                 )
             )
         }
     }
-}*/
+}

@@ -46,7 +46,7 @@ fun DetailPokemonScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = FunctionUtil.backgroundColorTypePokemon(uiState.pokemon?.types[0]?.type?.name.toString())
+                    containerColor = FunctionUtil.backgroundColorTypePokemon(uiState.pokemon?.types[0].toString())
                 )
             )
         },
