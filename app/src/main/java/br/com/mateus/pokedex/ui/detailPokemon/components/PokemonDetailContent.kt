@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.mateus.pokedex.model.PokemonDetail
+import br.com.mateus.pokedex.data.model.PokemonDetail
 
 @Composable
 fun DetailPokemonContent(

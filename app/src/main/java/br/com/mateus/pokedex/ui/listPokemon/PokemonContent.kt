@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
-import br.com.mateus.pokedex.model.Pokemon
+import br.com.mateus.pokedex.data.model.Pokemon
 
 @Composable
 fun PokemonContent(

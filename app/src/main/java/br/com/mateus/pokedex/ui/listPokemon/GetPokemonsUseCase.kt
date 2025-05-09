@@ -2,7 +2,7 @@ package br.com.mateus.pokedex.ui.listPokemon
 
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import br.com.mateus.pokedex.model.Pokemon
+import br.com.mateus.pokedex.data.model.Pokemon
 import br.com.mateus.pokedex.repository.ListPokemonRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

@@ -1,7 +1,6 @@
 package br.com.mateus.pokedex.source
 
-import br.com.mateus.pokedex.model.PokemonDetail
-import br.com.mateus.pokedex.paging.PokemonDetailsPagingSource
+import br.com.mateus.pokedex.data.model.PokemonDetail
 import br.com.mateus.pokedex.service.PokedexService
 import javax.inject.Inject
 

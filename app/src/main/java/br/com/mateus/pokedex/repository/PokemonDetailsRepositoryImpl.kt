@@ -1,6 +1,6 @@
 package br.com.mateus.pokedex.repository
 
-import br.com.mateus.pokedex.model.PokemonDetail
+import br.com.mateus.pokedex.data.model.PokemonDetail
 import br.com.mateus.pokedex.source.PokemonDetailsRemoteDataSource
 import javax.inject.Inject
 

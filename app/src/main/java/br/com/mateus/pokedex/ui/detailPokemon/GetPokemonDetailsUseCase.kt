@@ -1,6 +1,6 @@
 package br.com.mateus.pokedex.ui.detailPokemon
 
-import br.com.mateus.pokedex.model.PokemonDetail
+import br.com.mateus.pokedex.data.model.PokemonDetail
 import br.com.mateus.pokedex.repository.PokemonDetailsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
