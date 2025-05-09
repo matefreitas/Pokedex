@@ -2,16 +2,7 @@ package br.com.mateus.pokedex.data.response
 
 import com.google.gson.annotations.SerializedName
 
-data class BlackWhite(
-    val animated: AnimatedResponse,
-    @SerializedName("back_default")
-    val backDefault: String,
-    @SerializedName("back_female")
-    val backFemale: String?,
-    @SerializedName("back_shiny")
-    val backShiny: String,
-    @SerializedName("back_shiny_female")
-    val backShinyFemale: String?,
+data class XYResponse(
     @SerializedName("front_default")
     val frontDefault: String,
     @SerializedName("front_female")

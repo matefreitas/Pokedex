@@ -1,35 +1,35 @@
 package br.com.mateus.pokedex.data.model
 
-import br.com.mateus.pokedex.data.response.Ability
-import br.com.mateus.pokedex.data.response.Cries
-import br.com.mateus.pokedex.data.response.Form
-import br.com.mateus.pokedex.data.response.HeldItem
-import br.com.mateus.pokedex.data.response.Index
-import br.com.mateus.pokedex.data.response.Move
-import br.com.mateus.pokedex.data.response.Species
-import br.com.mateus.pokedex.data.response.Sprites
-import br.com.mateus.pokedex.data.response.Stat
-import br.com.mateus.pokedex.data.response.Type
+import br.com.mateus.pokedex.data.response.AbilityResponse
+import br.com.mateus.pokedex.data.response.CriesResponse
+import br.com.mateus.pokedex.data.response.FormResponse
+import br.com.mateus.pokedex.data.response.HeldItemResponse
+import br.com.mateus.pokedex.data.response.IndexResponse
+import br.com.mateus.pokedex.data.response.MoveResponse
+import br.com.mateus.pokedex.data.response.SpeciesResponse
+import br.com.mateus.pokedex.data.response.SpritesResponse
+import br.com.mateus.pokedex.data.response.StatResponse
+import br.com.mateus.pokedex.data.response.TypeResponse
 
 data class PokemonDetail(
-    val abilities: List<Ability>,
+    val abilities: List<AbilityResponse>,
     val baseExperience: Long,
-    val cries: Cries,
-    val forms: List<Form>,
-    val gameIndices: List<Index>,
+    val cries: CriesResponse,
+    val forms: List<FormResponse>,
+    val gameIndices: List<IndexResponse>,
     val height: Long,
-    val heldItems: List<HeldItem>,
+    val heldItems: List<HeldItemResponse>,
     val id: Long,
     val isDefault: Boolean,
     val locationAreaEncounters: String,
-    val moves: List<Move>,
+    val moves: List<MoveResponse>,
     val name: String,
     val order: Long,
-    val pastAbilities: List<Ability?>,
-    val pastTypes: List<Type?>,
-    val species: Species,
-    val sprites: Sprites,
-    val stats: List<Stat>,
-    val types: List<Type>,
+    val pastAbilities: List<AbilityResponse?>,
+    val pastTypes: List<TypeResponse?>,
+    val species: SpeciesResponse,
+    val sprites: SpritesResponse,
+    val stats: List<StatResponse>,
+    val types: List<TypeResponse>,
     val weight: Long
 )

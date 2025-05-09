@@ -3,31 +3,31 @@ package br.com.mateus.pokedex.data.response
 import com.google.gson.annotations.SerializedName
 
 data class PokemonDetailResponse(
-    val abilities: List<Ability>,
+    val abilities: List<AbilityResponse>,
     @SerializedName("base_experience")
     val baseExperience: Long,
-    val cries: Cries,
-    val forms: List<Form>,
+    val cries: CriesResponse,
+    val forms: List<FormResponse>,
     @SerializedName("game_indices")
-    val gameIndices: List<Index>,
+    val gameIndices: List<IndexResponse>,
     val height: Long,
     @SerializedName("held_items")
-    val heldItems: List<HeldItem>,
+    val heldItems: List<HeldItemResponse>,
     val id: Long,
     @SerializedName("is_default")
     val isDefault: Boolean,
     @SerializedName("location_area_encounters")
     val locationAreaEncounters: String,
-    val moves: List<Move>,
+    val moves: List<MoveResponse>,
     val name: String,
     val order: Long,
     @SerializedName("past_abilities")
-    val pastAbilities: List<Ability?>,
+    val pastAbilities: List<AbilityResponse?>,
     @SerializedName("past_types")
-    val pastTypes: List<Type?>,
-    val species: Species,
-    val sprites: Sprites,
-    val stats: List<Stat>,
-    val types: List<Type>,
+    val pastTypes: List<TypeResponse?>,
+    val species: SpeciesResponse,
+    val sprites: SpritesResponse,
+    val stats: List<StatResponse>,
+    val types: List<TypeResponse>,
     val weight: Long,
 )
