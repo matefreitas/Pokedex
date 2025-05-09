@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import br.com.mateus.pokedex.ui.detailPokemon.DetailPokemonScreen
-import br.com.mateus.pokedex.ui.detailPokemon.DetailPokemonViewModel
+import br.com.mateus.pokedex.ui.detailPokemon.PokemonDetailViewModel
 import br.com.mateus.pokedex.ui.listPokemon.ListPokemonScreen
 import br.com.mateus.pokedex.ui.listPokemon.ListPokemonViewModel
 import br.com.mateus.pokedex.util.DETAIL_POKEMON_ARGUMENT_KEY
@@ -40,7 +40,7 @@ fun NavGraph(
                 }
             )
         ) {
-            val uiState: DetailPokemonViewModel = hiltViewModel()
+            val uiState: PokemonDetailViewModel = hiltViewModel()
             DetailPokemonScreen(
                 uiState = uiState.uiState,
                 navigateBack = {navHostController.navigateUp()}

@@ -1,6 +1,5 @@
 package br.com.mateus.pokedex.ui.detailPokemon
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -13,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DetailPokemonViewModel @Inject constructor(
+class PokemonDetailViewModel @Inject constructor(
     getPokemonDetailsUseCase: GetPokemonDetailsUseCase,
     savedStateHandle: SavedStateHandle
 ): ViewModel() {

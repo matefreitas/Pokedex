@@ -13,6 +13,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import br.com.mateus.pokedex.ui.detailPokemon.components.DetailPokemonContent
 import br.com.mateus.pokedex.util.FunctionUtil
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -53,9 +54,7 @@ fun DetailPokemonScreen(
             uiState.pokemon?.let {
                 DetailPokemonContent(
                     paddingValues = paddingValues,
-                    type = it.types[0].type.name,
-                    urlImg = it.sprites.frontDefault,
-                    name = it.name
+                    pokemon = it
                 )
             }
         }
