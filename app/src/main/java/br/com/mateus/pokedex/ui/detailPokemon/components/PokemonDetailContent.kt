@@ -1,8 +1,14 @@
 package br.com.mateus.pokedex.ui.detailPokemon.components
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,7 +28,7 @@ fun DetailPokemonContent(
     pokemon: PokemonDetail
 ) {
     Column(
-        modifier = modifier.padding(paddingValues)
+        modifier = modifier.padding(paddingValues).fillMaxSize()
     ) {
         PokemonDetailBackdropImage(
             urlImg = pokemon.spritePokemon,
@@ -32,10 +38,24 @@ fun DetailPokemonContent(
             pokemon.name,
             fontSize = 35.sp,
             textAlign = TextAlign.Center,
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 10.dp)
         )
+        Spacer(modifier = Modifier.height(8.dp))
+        FlowRow(
+            horizontalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
+            pokemon.types.forEach {type ->
+                PokemonDetailTypeTag(type = type)
+            }
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        //row para altura e peso
     }
 
 }
@@ -51,7 +71,7 @@ private fun DetailPokemonContentPreview() {
                 pokemon = PokemonDetail(
                     spritePokemon = "",
                     "pikachu",
-                    listOf("Rock")
+                    listOf("fire","fire")
                 )
             )
         }
