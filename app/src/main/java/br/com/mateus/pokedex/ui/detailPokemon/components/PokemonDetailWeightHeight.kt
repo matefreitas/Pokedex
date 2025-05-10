@@ -20,20 +20,18 @@ fun PokemonDetailWeightHeight(
     weight: Long,
     height: Long
 ) {
-    val resultHeight = height.toDouble()/10
-    val resultWeight = weight.toDouble()/10
     Column{
         Row(
             modifier = modifier.fillMaxWidth()
         ){
             Text(
-                text = "$resultHeight M",
+                text = "${height.toDouble()/10} M",
                 fontSize = 25.sp,
                 textAlign = TextAlign.Center,
                 modifier = modifier.weight(1f)
             )
             Text(
-                text = "$resultWeight KG",
+                text = "${weight.toDouble()/10} KG",
                 fontSize = 25.sp,
                 textAlign = TextAlign.Center,
                 modifier = modifier.weight(1f)
