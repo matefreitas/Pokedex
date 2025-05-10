@@ -3,8 +3,9 @@ package br.com.mateus.pokedex.data.model
 data class PokemonDetail(
     val spritePokemon: String,
     val name: String,
-    val types: List<String>
-
+    val types: List<String>,
+    val height: Long,
+    val weight: Long
 )
 /*data class PokemonDetail(
     val abilities: List<AbilityResponse>,

@@ -34,7 +34,7 @@ fun DetailPokemonContent(
             type = pokemon.types[0]
         )
         Text(
-            pokemon.name,
+            text = pokemon.name,
             fontSize = 35.sp,
             textAlign = TextAlign.Center,
             modifier = Modifier
@@ -54,7 +54,10 @@ fun DetailPokemonContent(
             }
         }
         Spacer(modifier = Modifier.height(8.dp))
-        //row para altura e peso
+        PokemonDetailWeightHeight(
+            weight = pokemon.weight,
+            height = pokemon.height
+        )
     }
 
 }
@@ -70,7 +73,9 @@ private fun DetailPokemonContentPreview() {
                 pokemon = PokemonDetail(
                     spritePokemon = "",
                     "pikachu",
-                    listOf("fire","fire")
+                    listOf("fire","grass"),
+                    height = 0,
+                    weight = 0
                 )
             )
         }

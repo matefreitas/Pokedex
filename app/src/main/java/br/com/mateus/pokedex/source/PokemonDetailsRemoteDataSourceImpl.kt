@@ -18,7 +18,9 @@ class PokemonDetailsRemoteDataSourceImpl @Inject constructor(
         return PokemonDetail(
             spritePokemon = response.sprites.frontDefault,
             name = response.name,
-            types = listTypes
+            types = listTypes,
+            height = response.height,
+            weight = response.weight
         )
     }
 }
