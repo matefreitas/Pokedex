@@ -20,8 +20,7 @@ import br.com.mateus.pokedex.util.FunctionUtil
 @Composable
 fun DetailPokemonScreen(
     uiState: PokemonDetailsState,
-    navigateBack: () -> Unit,
-    modifier: Modifier = Modifier
+    navigateBack: () -> Unit
 ) {
     Scaffold(
         topBar = {
