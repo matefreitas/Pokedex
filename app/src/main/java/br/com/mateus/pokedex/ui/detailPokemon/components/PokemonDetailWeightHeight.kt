@@ -60,7 +60,7 @@ fun PokemonDetailWeightHeight(
     }
 }
 
-@Preview
+@Preview(locale = "pt-rBR")
 @Composable
 private fun PokemonDetailWeightHeightPreview() {
     PokemonDetailWeightHeight(
