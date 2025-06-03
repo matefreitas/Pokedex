@@ -1,31 +1,54 @@
 package br.com.mateus.pokedex.util
 
 import androidx.compose.ui.graphics.Color
+import br.com.mateus.pokedex.data.model.Stat
+import br.com.mateus.pokedex.ui.theme.BugColor
+import br.com.mateus.pokedex.ui.theme.DarkColor
+import br.com.mateus.pokedex.ui.theme.DragonColor
+import br.com.mateus.pokedex.ui.theme.ElectricColor
+import br.com.mateus.pokedex.ui.theme.FairyColor
+import br.com.mateus.pokedex.ui.theme.FightingColor
+import br.com.mateus.pokedex.ui.theme.FireColor
+import br.com.mateus.pokedex.ui.theme.FlyingColor
+import br.com.mateus.pokedex.ui.theme.GhostColor
+import br.com.mateus.pokedex.ui.theme.GrassColor
+import br.com.mateus.pokedex.ui.theme.GroundColor
+import br.com.mateus.pokedex.ui.theme.IceColor
+import br.com.mateus.pokedex.ui.theme.NormalColor
+import br.com.mateus.pokedex.ui.theme.PoisonColor
+import br.com.mateus.pokedex.ui.theme.PsychicColor
+import br.com.mateus.pokedex.ui.theme.RockColor
+import br.com.mateus.pokedex.ui.theme.SteelColor
+import br.com.mateus.pokedex.ui.theme.WaterColor
 
-object FunctionUtil {
-    fun backgroundColorTypePokemon(
-        type: String
-    ): Color{
-        return when(type) {
-            "grass" -> Color(0xFF89D74E)
-            "fire" -> Color(0xFFFB5643)
-            "water" -> Color(0xFF57ADFF)
-            "bug" -> Color(0xFFC3D21E)
-            "normal" -> Color(0xFFB6B7A9)
-            "poison" -> Color(0xFFA75BA1)
-            "electric" -> Color(0xFFFCE53D)
-            "ground" -> Color(0xFFE9C654)
-            "fighting" -> Color(0xFFA75845)
-            "ghost" -> Color(0xFF7A74D6)
-            "psychic" -> Color(0xFFF461B0)
-            "rock" -> Color(0xFFD0BD72)
-            "steel" -> Color(0xFFC4C2DA)
-            "flying" -> Color(0xFF7BA4FF)
-            "ice" -> Color(0xFF95F1FE)
-            "dragon" -> Color(0xFF8974FE)
-            "dark" -> Color(0xFF8F6955)
-            "fairy" -> Color(0xFFFAADFF)
-            else -> Color.Gray
-        }
+fun backgroundColorTypePokemon(
+    type: String
+): Color{
+    return when(type) {
+        "grass" -> GrassColor
+        "fire" -> FireColor
+        "water" -> WaterColor
+        "bug" -> BugColor
+        "normal" -> NormalColor
+        "poison" -> PoisonColor
+        "electric" -> ElectricColor
+        "ground" -> GroundColor
+        "fighting" -> FightingColor
+        "ghost" -> GhostColor
+        "psychic" -> PsychicColor
+        "rock" -> RockColor
+        "steel" -> SteelColor
+        "flying" -> FlyingColor
+        "ice" -> IceColor
+        "dragon" -> DragonColor
+        "dark" -> DarkColor
+        "fairy" -> FairyColor
+        else -> Color.Gray
+    }
+}
+
+fun parseStatColor(stat: Stat): Color {
+    return when (stat.name){
+        else -> Color.White
     }
 }

@@ -11,7 +11,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import br.com.mateus.pokedex.R
-import br.com.mateus.pokedex.util.FunctionUtil
+import br.com.mateus.pokedex.util.backgroundColorTypePokemon
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
@@ -26,8 +26,8 @@ fun PokemonDetailBackdropImage(
     Card(
         shape = RoundedCornerShape(bottomStart = 25.dp, bottomEnd = 25.dp),
         colors = CardDefaults.cardColors(
-            contentColor = FunctionUtil.backgroundColorTypePokemon(type),
-            containerColor = FunctionUtil.backgroundColorTypePokemon(type)
+            contentColor = backgroundColorTypePokemon(type),
+            containerColor = backgroundColorTypePokemon(type)
         )
     ) {
         AsyncImage(

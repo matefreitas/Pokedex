@@ -2,6 +2,7 @@ package br.com.mateus.pokedex.source
 
 import br.com.mateus.pokedex.data.model.PokemonDetail
 import br.com.mateus.pokedex.service.PokedexService
+import br.com.mateus.pokedex.ui.detailPokemon.mapper.toPokemonStat
 import javax.inject.Inject
 
 class PokemonDetailsRemoteDataSourceImpl @Inject constructor(
@@ -20,7 +21,8 @@ class PokemonDetailsRemoteDataSourceImpl @Inject constructor(
             name = response.name,
             types = listTypes,
             height = response.height,
-            weight = response.weight
+            weight = response.weight,
+            stats = response.stats.toPokemonStat()
         )
     }
 }

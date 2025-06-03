@@ -5,7 +5,8 @@ data class PokemonDetail(
     val name: String,
     val types: List<String>,
     val height: Long,
-    val weight: Long
+    val weight: Long,
+    val stats: List<Stat>
 )
 /*data class PokemonDetail(
     val abilities: List<AbilityResponse>,

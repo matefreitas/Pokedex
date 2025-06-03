@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.mateus.pokedex.R
 import br.com.mateus.pokedex.ui.theme.PokedexTheme
-import br.com.mateus.pokedex.util.FunctionUtil
+import br.com.mateus.pokedex.util.backgroundColorTypePokemon
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
@@ -49,7 +49,7 @@ fun PokemonItem(
         elevation = CardDefaults.elevatedCardElevation(8.dp)
     ) {
         Column(
-            modifier = modifier.background(FunctionUtil.backgroundColorTypePokemon(type))
+            modifier = modifier.background(backgroundColorTypePokemon(type))
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)

@@ -11,10 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import br.com.mateus.pokedex.ui.detailPokemon.components.DetailPokemonContent
-import br.com.mateus.pokedex.util.FunctionUtil
+import br.com.mateus.pokedex.util.backgroundColorTypePokemon
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,7 +45,7 @@ fun DetailPokemonScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = FunctionUtil.backgroundColorTypePokemon(uiState.pokemon?.types[0].toString())
+                    containerColor = backgroundColorTypePokemon(uiState.pokemon?.types[0].toString())
                 )
             )
         },

@@ -16,7 +16,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.mateus.pokedex.util.FunctionUtil
+import br.com.mateus.pokedex.util.backgroundColorTypePokemon
+
 
 @Composable
 fun PokemonDetailTypeTag(
@@ -27,7 +28,7 @@ fun PokemonDetailTypeTag(
         modifier = Modifier
             .padding(10.dp)
             .clip(RoundedCornerShape(100.dp))
-            .background(FunctionUtil.backgroundColorTypePokemon(type))
+            .background(backgroundColorTypePokemon(type))
             .height(50.dp)
             .width(150.dp)
     ){

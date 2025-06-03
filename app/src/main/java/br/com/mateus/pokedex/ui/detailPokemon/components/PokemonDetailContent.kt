@@ -1,6 +1,7 @@
 package br.com.mateus.pokedex.ui.detailPokemon.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
@@ -12,7 +13,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -58,6 +61,20 @@ fun DetailPokemonContent(
             weight = pokemon.weight,
             height = pokemon.height
         )
+        Spacer(modifier = Modifier.height(8.dp))
+        for (stat in pokemon.stats) {
+            Box(
+                modifier = Modifier.padding(start = 8.dp, end = 8.dp)
+            ){
+                PokemonDetailBaseStats(
+                    statName = stat.name,
+                    statValue = stat.baseStat,
+                    statMaxValue = pokemon.stats.maxOf { it.baseStat },
+                    statColor = Color.Red
+                )
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+        }
     }
 
 }
@@ -75,7 +92,8 @@ private fun DetailPokemonContentPreview() {
                     "pikachu",
                     listOf("fire","grass"),
                     height = 0,
-                    weight = 0
+                    weight = 0,
+                    stats = listOf()
                 )
             )
         }
