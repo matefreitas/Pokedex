@@ -3,7 +3,6 @@ package br.com.mateus.pokedex.ui.detailPokemon.components
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -80,6 +79,6 @@ private fun PokemonDetailBaseStatsPreview() {
         statName = "HP",
         statValue = 10,
         statMaxValue = 30,
-        Color.Red
+        Color(0xFFF5FF00)
     )
 }

@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.mateus.pokedex.data.model.PokemonDetail
 import br.com.mateus.pokedex.ui.theme.PokedexTheme
+import br.com.mateus.pokedex.util.parseStatColor
 
 @Composable
 fun DetailPokemonContent(
@@ -70,7 +71,7 @@ fun DetailPokemonContent(
                     statName = stat.name,
                     statValue = stat.baseStat,
                     statMaxValue = pokemon.stats.maxOf { it.baseStat },
-                    statColor = Color.Red
+                    statColor = parseStatColor(stat = stat)
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))

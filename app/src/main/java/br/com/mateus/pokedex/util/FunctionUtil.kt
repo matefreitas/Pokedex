@@ -2,8 +2,10 @@ package br.com.mateus.pokedex.util
 
 import androidx.compose.ui.graphics.Color
 import br.com.mateus.pokedex.data.model.Stat
+import br.com.mateus.pokedex.ui.theme.AtkColor
 import br.com.mateus.pokedex.ui.theme.BugColor
 import br.com.mateus.pokedex.ui.theme.DarkColor
+import br.com.mateus.pokedex.ui.theme.DefColor
 import br.com.mateus.pokedex.ui.theme.DragonColor
 import br.com.mateus.pokedex.ui.theme.ElectricColor
 import br.com.mateus.pokedex.ui.theme.FairyColor
@@ -13,11 +15,15 @@ import br.com.mateus.pokedex.ui.theme.FlyingColor
 import br.com.mateus.pokedex.ui.theme.GhostColor
 import br.com.mateus.pokedex.ui.theme.GrassColor
 import br.com.mateus.pokedex.ui.theme.GroundColor
+import br.com.mateus.pokedex.ui.theme.HPColor
 import br.com.mateus.pokedex.ui.theme.IceColor
 import br.com.mateus.pokedex.ui.theme.NormalColor
 import br.com.mateus.pokedex.ui.theme.PoisonColor
 import br.com.mateus.pokedex.ui.theme.PsychicColor
 import br.com.mateus.pokedex.ui.theme.RockColor
+import br.com.mateus.pokedex.ui.theme.SpAtkColor
+import br.com.mateus.pokedex.ui.theme.SpDefColor
+import br.com.mateus.pokedex.ui.theme.SpdColor
 import br.com.mateus.pokedex.ui.theme.SteelColor
 import br.com.mateus.pokedex.ui.theme.WaterColor
 
@@ -49,6 +55,12 @@ fun backgroundColorTypePokemon(
 
 fun parseStatColor(stat: Stat): Color {
     return when (stat.name){
+        "hp" -> HPColor
+        "attack" -> AtkColor
+        "defense" -> DefColor
+        "special-attack" -> SpAtkColor
+        "special-defense" -> SpDefColor
+        "speed" -> SpdColor
         else -> Color.White
     }
 }
